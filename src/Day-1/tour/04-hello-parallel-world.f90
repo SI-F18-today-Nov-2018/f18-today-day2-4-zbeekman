@@ -1,7 +1,13 @@
 program main
   !! author: Damian Rouson
+  !! date: 11/4/2018
   !!
   !! Print greetings that image 1 gets from each other image
+  !! To compile and execute,
+  !!
+  !!    caf 02-assertions-interface.f90 03-assertions-implementation.f90 04-hello-parallel-world.f90
+  !!    cafrun -n 4 ./a.out
+  !!
   use assertions_interface, only : assert,assertions
   integer, parameter :: test_reporter=1, max_string=100
   character(len=max_string) greeting[*],message_expected,message_received

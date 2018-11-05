@@ -2,7 +2,11 @@ module assertions_interface
   !! author: Damian Rouson
   !! date: 11/4/2018
   !!
-  !! Facilitate runtime checking of assertions expected to always be true in normal execution
+  !! Facilitate runtime checking of assertions expected to always be true in normal execution.
+  !! To compile, execute
+  !!
+  !!    caf -c 02-assertions-interface.f90
+  !!
   implicit none
   private
   public :: assert, assertions
@@ -25,3 +29,4 @@ module assertions_interface
   end interface
 
 end module
+

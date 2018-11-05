@@ -1,4 +1,13 @@
 submodule(assertions_interface) assertions_implementation
+  !! author: Damian Rouson
+  !! date: 11/4/2018
+  !!
+  !! Implement support for runtime checking of assertions expected to always be true in normal execution.
+  !! To compile, execute
+  !!
+  !!    caf -c 03-assertions-implementation.f90
+  !!
+  implicit none
   implicit none
 
 contains
@@ -26,3 +35,4 @@ contains
     end procedure
 
 end submodule assertions_implementation
+module assertions_interface
