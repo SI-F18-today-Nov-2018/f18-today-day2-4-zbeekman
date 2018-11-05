@@ -8,7 +8,6 @@ submodule(assertions_interface) assertions_implementation
   !!    caf -c 03-assertions-implementation.f90
   !!
   implicit none
-  implicit none
 
 contains
     module procedure assert
@@ -22,7 +21,7 @@ contains
           error_message = description // " failed on image " // adjustl(trim(my_image))
           if (present(diagnostic_data))  then
             select type(diagnostic_data)
-              type is(integer)
+              type is(character(len=*))
                 write(my_data,*) diagnostic_data
                 error_message = error_message // "with diagnostic data " // adjustl(trim(my_data))
               class default
@@ -35,4 +34,3 @@ contains
     end procedure
 
 end submodule assertions_implementation
-module assertions_interface
