@@ -1,0 +1,2 @@
+&num_blocks nx=10, ny=100, nz=10 /
+&global_domain x_lbound=-1., x_ubound=1., y_lbound=-1., y_ubound=1., z_lbound=-10., z_ubound=10. /
