@@ -1,4 +1,7 @@
 program main
+  !! author: Damian Rouson
+  !!
+  !! Print greetings that image 1 gets from each other image
   use assertions_interface, only : assert,assertions
   integer, parameter :: test_reporter=1, max_string=100
   character(len=max_string) greeting[*],message_expected,message_received
