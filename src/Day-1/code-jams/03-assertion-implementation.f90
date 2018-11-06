@@ -6,7 +6,7 @@ contains
     module procedure assert
       if (.not. assertion) then
         block
-          integer, parameter :: max_digits=10
+          integer, parameter :: max_digits=32
           character(len=max_digits) my_image
           character(len=:), allocatable :: error_message
           write(my_image,*) this_image()
