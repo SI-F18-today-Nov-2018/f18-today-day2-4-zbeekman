@@ -71,29 +71,40 @@ contains
 
     module procedure allocate_my_partition
 
-       integer alloc_result
+       integer alloc_result, image
        integer, parameter :: success=0
 
-      associate(ni=>num_images())
+      associate(ni=>num_images(), me=>this_image())
       associate(nx=>(resolution(1)),ny=>(resolution(2)),nz=>(resolution(3)))
 
        if (assertions) then
          !! Requirements
          call assert(nx>=ni,"enough planes to distribute")
-         call assert(mod(nx,ni)==0,"planes evenly divisible acrosss images")
        end if
 
-        associate(my_yz_planes=>nx/num_images())
+        associate(num_ny_planes=>(nx))
+        associate(quotient=>nx/num_images())
+        associate(remainder=>mod(nx,num_images()))
 
-          allocate(this%x(my_yz_planes,ny,nz,space_dimension)[*],stat=alloc_result)
+        associate(my_first=>1+sum([(quotient+overflow(image,remainder),image=1,me-1)]))
+        associate(my_last=>my_first+quotient+overflow(me,remainder)-1)
 
-        end associate; end associate
+          allocate(this%x(my_first:my_last,ny,nz,space_dimension)[*],stat=alloc_result)
+
+        end associate; end associate; end associate; end associate; end associate; end associate
 
         if (assertions) then
           !! Assurances
           call assert(alloc_result==success,"coarray allocation succeeded")
         end if
       end associate
+
+    contains
+      pure function overflow(image_number,remainder) result(extra)
+        integer, intent(in) :: image_number, remainder
+        integer :: extra
+        extra = merge(1,0,image_number<=remainder)
+      end function
 
     end procedure
 
@@ -128,6 +139,7 @@ program main
      call co_sum( load )
      call assert( load == product(nx)*space_dimension, "all points distributed")
    end block
+
 
    sync all
    block
