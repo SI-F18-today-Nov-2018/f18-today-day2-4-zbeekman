@@ -12,6 +12,8 @@ add_library( utilities
 
 add_executable( test-asymmetric-load-check
   test-asymmetric-load-check.f90
+  structured-grid-implementation.f90
+  structured-grid-interface.f90
 )
 
 target_link_libraries( test-asymmetric-load-check
