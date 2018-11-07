@@ -10,16 +10,6 @@ add_library( utilities
   Day-1/code-jams/03-assertion-implementation.f90
 )
 
-add_executable( test-partitioned-grid
-  06-test-partitioned-grid.f90
-  07-partition-interface.f90
-  08-partition-implementation.f90
-)
-
-target_link_libraries( test-partitioned-grid
-  utilities
-)
-
 add_executable( collective-load-check
   05-collective-load-check.f90
 )
