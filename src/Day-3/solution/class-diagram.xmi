@@ -1,0 +1,56 @@
+<?xml version="1.0" standalone="yes"?>
+<XMI xmi.version="1.1" xmlns:UML="org.omg/standards/UML">
+  <XMI.header>
+    <XMI.metaModel name="UML" version="1.3" href="UML.xml"></XMI.metaModel>
+    <XMI.model name="" version="1" href=""></XMI.model>
+  </XMI.header>
+  <XMI.content>
+    <UML:Model xmi.id="790634869" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+      <UML:Namespace.ownedElement>
+        <UML:Association xmi.id="291266671" name="" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isNavigable="true">
+          <UML:Association.connection>
+            <UML:AssociationEnd xmi.id="1104532950" visibility="public" isSpecification="false" isNavigable="true" ordering="unordered" aggregation="composite" targetScope="instance" changeability="changeable">
+              <UML:AssociationEnd.participant>
+                <UML:Class xmi.idref="1151161141179911611711410110095103114105100"></UML:Class>
+              </UML:AssociationEnd.participant>
+            </UML:AssociationEnd>
+            <UML:AssociationEnd xmi.id="537665991" visibility="public" isSpecification="false" isNavigable="true" ordering="unordered" aggregation="none" targetScope="instance" changeability="changeable">
+              <UML:AssociationEnd.participant>
+                <UML:Class xmi.idref="11410197108"></UML:Class>
+              </UML:AssociationEnd.participant>
+            </UML:AssociationEnd>
+          </UML:Association.connection>
+        </UML:Association>
+        <UML:Stereotype xmi.id="1541613002599--952121541" name="Coarray" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false">
+          <UML:Stereotype.baseClass></UML:Stereotype.baseClass>
+        </UML:Stereotype>
+        <UML:Class xmi.id="1151161141179911611711410110095103114105100" name="structured_grid" visibility="Public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+          <UML:Classifier.feature>
+            <UML:Attribute xmi.id="1989612999" name="x" visibility="public" ownerScope="instance" changeability="changeable" targetScope="instance" isSpecification="false">
+              <UML:StructuralFeature.multiplicity>
+                <UML:Multiplicity xmi.id="589237301">
+                  <UML:Multiplicity.range>
+                    <UML:MultiplicityRange xmi.id="2021173574" lower="1" upper="1"></UML:MultiplicityRange>
+                  </UML:Multiplicity.range>
+                </UML:Multiplicity>
+              </UML:StructuralFeature.multiplicity>
+              <UML:StructuralFeature.type>
+                <UML:DataType xmi.id="1541613002599-2013192976" name="real[]" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false"></UML:DataType>
+              </UML:StructuralFeature.type>
+              <UML:ModelElement.stereotype>
+                <UML:Stereotype xmi.idref="1541613002599--952121541"></UML:Stereotype>
+              </UML:ModelElement.stereotype>
+            </UML:Attribute>
+            <UML:Operation name="get_grid_resolution" visibility="public" isSpecification="false" ownerScoep="instance" isQuery="false" concurency="sequential" isRoot="false" isLeaf="false" isAbstract="false"></UML:Operation>
+            <UML:Operation name="allocate_my_partition" visibility="public" isSpecification="false" ownerScoep="instance" isQuery="false" concurency="sequential" isRoot="false" isLeaf="false" isAbstract="false"></UML:Operation>
+            <UML:Operation name="my_partition_size" visibility="public" isSpecification="false" ownerScoep="instance" isQuery="false" concurency="sequential" isRoot="false" isLeaf="false" isAbstract="false"></UML:Operation>
+          </UML:Classifier.feature>
+          <UML:GeneralizableElement.generalization>
+            <UML:Generalization xmi.idref="1255683180"></UML:Generalization>
+          </UML:GeneralizableElement.generalization>
+        </UML:Class>
+      </UML:Namespace.ownedElement>
+    </UML:Model>
+  </XMI.content>
+</XMI>
+
